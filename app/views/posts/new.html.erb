@@ -1,0 +1,18 @@
+<h2>新しい投稿</h2>
+<%= form_for @post do |f| %>
+<p>
+  <%= f.text_field :title, placeholder: 'タイトルを入力', class: 'new_post' %>
+  <% if @post.errors.messages[:title].any? %>
+  <span class='error'><%= @post.errors.messages[:title][0] %></span>
+  <% end %>
+</p>
+<p>
+  <%= f.text_area :dsc, placeholder: '説明を入力', class: 'new_post' %>
+  <% if @post.errors.messages[:dsc].any? %>
+  <span class='error'><%= @post.errors.messages[:dsc][0] %></span>
+  <% end %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
